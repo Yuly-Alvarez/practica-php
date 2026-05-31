@@ -40,6 +40,7 @@ Hoy es <?php echo date("l");?>. Aquí están las noticias más recientes.
     /* Comentarios en
     PHP multilínea */
 ?>
+<br>
 
 <h1>Sintaxis básica</h1>
 <?php 
@@ -48,7 +49,8 @@ Hoy es <?php echo date("l");?>. Aquí están las noticias más recientes.
     $ myCounter = 1; <br />
     $ myString = 'Hello'; <br />
     $ myArray = array('One', 'Two', 'Three'); <br />";
- ?>
+?>
+<br><br>
 
 <h1>Variables</h1>
 <h2>String o Cadena</h2>
@@ -59,6 +61,7 @@ Hoy es <?php echo date("l");?>. Aquí están las noticias más recientes.
     $currentUser = $username;
     echo $currentUser;
 ?>
+<br>
 
 <h2>Numéricas</h2>
 <?php 
@@ -69,9 +72,55 @@ Hoy es <?php echo date("l");?>. Aquí están las noticias más recientes.
     $count = 17.5;
     echo $count;
 ?>
+<br>
 
 <h2>Matrices</h2>
+<h2>Matriz unidimensional</h2>
 <?php 
     $team = array('Bill', 'Mary', 'Mike', 'Chris', 'Anne');
     echo $team[3];
+?>
+<br>
+
+<h2>Matriz multidimensional</h2>
+<?php 
+    //Ejemplo con juego de "triqui" o "tres en raya"
+    $triqui = array(array('X', ' ', 'O'),
+                    array('O', 'O', 'X'),
+                    array('X', 'O', ' '));
+    echo $triqui[1] [2];
+?>
+<br>
+
+<h2>Reglas para denominar variables</h2>
+<ul>
+    <li>Los nombres deben empezar con una letra del alfabeto o el caracter '_'.</li>
+    <li>Sólo pueden contener caracteres alfanuméricos o '_'</li>
+    <li>No deben contener espacios. Si contiene más de una palabra puede usarse '_' o camelCase.</li>
+    <li>Los nombres de las variables distinguen mayúsculas de minúsculas.</li>
+</ul>
+<br><br>
+
+<!-- Pruebas de ejercicios de variables -->
+<?php 
+    $x = 9;
+    if (++$x == 10) echo $x;
+
+    $x = 9;
+    if ($x++ == 10) echo $x;
+?>
+<br>
+
+<h1>Concatenación</h1>
+<?php
+    // Ejemplo 1
+    echo "Se utiliza el '.' para unificar cadenas de caracteres. <br>";
+    $msgs = 5;
+    echo "Tienes " . $msgs . " mensajes.";
+    echo "<br> <br>";
+    // Ejemplo 2
+    echo "Se utiliza '.=' para unificar cadenas de caracteres. <br>";
+    $boletin = "Boletín de noticias ";
+    $newsFlash = " Flash de noticias.";
+    echo $boletin .= $newsFlash;
 ?>
