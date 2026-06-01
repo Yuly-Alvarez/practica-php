@@ -44,19 +44,32 @@ Hoy es <?php echo date("l");?>. Aquí están las noticias más recientes.
 
 <h1>Sintaxis básica</h1>
 <?php 
-    echo "Siempre finalizar la sentencia con ';'. Por ejemplo: $ x += 10; <br />";
-    echo "Las variables inician con '$' (como el ejemplo anterior, pero sin el espacio). <br /> Por ejemplo: <br />
-    $ myCounter = 1; <br />
-    $ myString = 'Hello'; <br />
-    $ myArray = array('One', 'Two', 'Three'); <br />";
+    echo 'Siempre finalizar la sentencia con punto y coma (;). Por ejemplo: $x += 10;';
+    echo "<br>";
+    echo 'Las variables inician con $ (como el ejemplo anterior). <br /> Por ejemplo:';
+    echo  "<br>";
+    echo '$myCounter = 1';
+    echo "<br>";
+    echo '$myString = "Hello"';
+    echo "<br>";
+    echo '$myArray = array("One", "Two", "Three")';
 ?>
 <br><br>
 
 <h1>Variables</h1>
 <h2>String o Cadena</h2>
-<?php 
+<?php
+    echo '$username = "Yuly Álvarez"';
+    echo "<br>";
+    echo 'echo $username';
+    echo "<br>";
     $username = "Yuly Álvarez";
     echo $username;
+    echo "<br><br>";
+    
+    echo '$currentUser = $username';
+    echo "<br>";
+    echo 'echo $currentUser';
     echo "<br>";
     $currentUser = $username;
     echo $currentUser;
@@ -64,11 +77,15 @@ Hoy es <?php echo date("l");?>. Aquí están las noticias más recientes.
 <br>
 
 <h2>Numéricas</h2>
-<?php 
+<?php
+    echo '$count = 17';
+    echo "<br>";
     $count = 17;
     echo $count;
-    echo "<br>";
+    echo "<br><br>";
     echo "Números decimales o con punto flotante (float) <br>";
+    echo '$count = 17.5';
+    echo "<br>";
     $count = 17.5;
     echo $count;
 ?>
@@ -77,14 +94,30 @@ Hoy es <?php echo date("l");?>. Aquí están las noticias más recientes.
 <h2>Matrices</h2>
 <h2>Matriz unidimensional</h2>
 <?php 
-    $team = array('Bill', 'Mary', 'Mike', 'Chris', 'Anne');
+    echo '$team = array("Bill", "Mary", "Mike", "Chris", "Anne")';
+    echo "<br>";
+    echo '$team[3]';
+    echo "<br>";
+    $team = array("Bill", "Mary", "Mike", "Chris", "Anne");
     echo $team[3];
 ?>
 <br>
 
 <h2>Matriz multidimensional</h2>
 <?php 
-    //Ejemplo con juego de "triqui" o "tres en raya"
+    echo 'Ejemplo con juego de "triqui" o "tres en raya"';
+    echo "<br>";
+    echo '$triqui = array(';
+    echo "<br>";
+    echo 'array("X", " ", "O"),';
+    echo "<br>";
+    echo 'array("O", "O", "X"),';
+    echo "<br>";
+    echo 'array("X", "O", " "))';
+    echo "<br>";
+    echo '$triqui[1] [2]';
+    echo "<br>";
+
     $triqui = array(array('X', ' ', 'O'),
                     array('O', 'O', 'X'),
                     array('X', 'O', ' '));
@@ -101,26 +134,79 @@ Hoy es <?php echo date("l");?>. Aquí están las noticias más recientes.
 </ul>
 <br><br>
 
-<!-- Pruebas de ejercicios de variables -->
-<?php 
+<h1>Pruebas de ejercicios de incremento y decremento de variables</h1>
+<?php
+    echo '$x = 9';
+    echo "<br>";
+    echo 'if (++$x == 10) echo $x;';
+    echo "<br>";
     $x = 9;
     if (++$x == 10) echo $x;
+    echo "<br>";
+    echo "Aumenta el valor de la variable ANTES de probar el valor.";
+    echo "<br><br>";
 
+    echo '$x = 9';
+    echo "<br>";
+    echo 'if ($x++ == 10) echo $x;';
+    echo "<br>";
     $x = 9;
     if ($x++ == 10) echo $x;
+    echo "<br>";
+    echo 'Aumenta el valor de la variable DESPUÉS de probar el valor.';
+    echo "<br><br>";
+
+    echo '$x = 0';
+    echo "<br>";
+    echo 'if (--$x == 10) echo $x;';
+    echo "<br>";
+    $y = 0;
+    if (--$x == 10) echo $x;
+    echo "<br>";
+    echo 'Disminuye el valor de la variable ANTES de probar el valor.';
+    echo "<br><br>";
+
+    echo '$x = 0';
+    echo "<br>";
+    echo 'if ($x-- == 10) echo $x;';
+    echo "<br>";
+    $y = 0;
+    if ($x-- == 10) echo $x;
+    echo "<br>";
+    echo 'Disminuye el valor de la variable DESPUÉS de probar el valor.';
 ?>
 <br>
 
 <h1>Concatenación</h1>
 <?php
-    // Ejemplo 1
-    echo "Se utiliza el '.' para unificar cadenas de caracteres. <br>";
+    echo "Ejemplo 1: Se utiliza el '.' para unificar cadenas de caracteres. <br>";
+    echo '$msgs = 5';
+    echo "<br>";
+    echo 'echo "Tienes " . $msgs . " mensajes."';
+    echo "<br>";
     $msgs = 5;
     echo "Tienes " . $msgs . " mensajes.";
-    echo "<br> <br>";
-    // Ejemplo 2
-    echo "Se utiliza '.=' para unificar cadenas de caracteres. <br>";
+    echo "<br><br>";
+    
+    echo "Ejemplo 2: Se utiliza '.=' para unificar cadenas de caracteres. <br>";
+    echo '$boletin = "Boletín de noticias "';
+    echo "<br>";
+    echo '$newsFlash = " Flash de noticias."';
+    echo "<br>";
+    echo 'echo $boletin .= $newsFlash';
+    echo "<br>";
     $boletin = "Boletín de noticias ";
     $newsFlash = " Flash de noticias.";
     echo $boletin .= $newsFlash;
+?>
+<br>
+
+<h2>Tipos de cadenas</h2>
+<p>Dependen del tipo de comillas que se usen.</p>
+<ul>
+    <li>Si se usan comillas simples, se mostrará el contenido del código literal.</li>
+    <li>Si se usan comillas dobles, PHP evaluará el valor de las variables que hayan en las cadenas de código.</li>
+</ul>
+<?php 
+
 ?>
