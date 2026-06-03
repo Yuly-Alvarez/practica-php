@@ -207,6 +207,38 @@ Hoy es <?php echo date("l");?>. Aquí están las noticias más recientes.
     <li>Si se usan comillas simples, se mostrará el contenido del código literal.</li>
     <li>Si se usan comillas dobles, PHP evaluará el valor de las variables que hayan en las cadenas de código.</li>
 </ul>
-<?php 
+<br><br>
 
+<h2>caracteres de escape</h2>
+    <p>Si requiere usarse un caracter especial que pueda generar un error de sintaxis, debe usarse un back slash '\' antes de dicho caracter. <br>
+    Por ejemplo, al ejecutar la siguiente línea, mostraría un error de sintaxis:</p> 
+    <p>$text = 'She's making the project'</p>
+    <p>En este caso quedaría así: <br>
+        $text = 'She\'s making the project' <br>
+        Y al ejecutar la línea de código, se mostrará así
+    </p>
+<?php 
+    echo '$text = She\'s making the project';
+    $text = "Dejé una nota que decía \"Llamar a las 5 p.m.\"";
+    echo "<p>Otros ejemplos pueden ser: <br>
+        $text <br>
+        
+    </p>";
+?>
+<h2>Comandos de varias líneas</h2>
+<?php 
+    $autor = "Abraham Lincoln";
+    // echo <<<T_END_HEREDOC Puedes engañar a todo el mundo algún tiempo. Puedes engañar a algunos todo el tiempo. Pero no puedes engañar a todo el mundo todo el tiempo.
+    // Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae dolorum modi aliquam eaque voluptatem rem ratione hic dolor asperiores qui? Porro delectus asperiores ducimus hic dicta adipisci ea maiores natus!
+    // - $autor .
+    // T_END_HEREDOC;
+    $author = "Brian W. Kernighan";
+
+  echo <<<_END
+  Debugging is twice as hard as writing the code in the first place.
+  Therefore, if you write the code as cleverly as possible, you are,
+  by definition, not smart enough to debug it.
+  
+  - $author.
+  _END;
 ?>
